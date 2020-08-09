@@ -1,13 +1,21 @@
 module.exports = {
     filterByCondition: function(car, query, key) {
-        return query[key] === car[key];
+        if(query[key]) {
+            return query[key] === car[key];
+        };
+        return true;
     },
     filterByModelName: function(car, query, key) {
-        return query[key] === car[key];
-    
+        if(query[key]) {
+            return query[key] === car[key];
+        };
+        return true;
     },
     filterByModelType: function(car, query, key) {
-        return query[key] === car[key];
+        if(query[key]) {
+            return query[key] === car[key];
+        };
+        return true;
     },
     filterByDate: function(car, query, key) {
         const dateInYear = JSON.parse(query[key]);
@@ -17,8 +25,11 @@ module.exports = {
         else if(dateInYear.to && !dateInYear.from) {
             return Number(car[key]) <= Number(dateInYear.to);
         }
-        else {
+        else if(dateInYear.to && dateInYear.from){
             return Number(car[key]) >= Number(dateInYear.from) && Number(car[key]) <= Number(dateInYear.to);
+        }
+        else {
+            return true;
         }
     },
     filterByPrice: function(car, query, key) {
@@ -29,8 +40,11 @@ module.exports = {
         else if(price.to && !price.from) {
             return Number(car[key]) <= Number(price.to);
         }
-        else {
+        else if(price.to && price.from) {
             return Number(car[key]) >= Number(price.from) && Number(car[key]) <= Number(price.to);
+        }
+        else {
+            return true;
         }
     }
 };

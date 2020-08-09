@@ -1,0 +1,23 @@
+.Modal {
+    position: fixed;
+    text-align: center;
+    left: 15%;
+    top: 40%;
+    width: 70%;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 2000;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px black;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+}
+
+.Open {
+    transform: translateY(0);
+}
+
+.Close {
+    transform: translateY(-100vh);
+}

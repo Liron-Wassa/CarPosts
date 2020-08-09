@@ -1,0 +1,78 @@
+.Car {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #fdf9c5;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.Car em {
+    color: rgb(160, 158, 158);
+}
+
+.Car p {
+    text-align: center;
+}
+
+.Car > .CarModel {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 240px;
+}
+
+.Car > .CarModel > img {
+    height: 100%;
+    width: 150px;
+}
+
+.Car > .CarModel > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.Car > .CarModel > div > div:nth-child(2) >  p {
+    margin: 0;
+}
+
+.Car > .Details {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 200px;
+}
+
+.Car > .Condition {
+    display: flex;
+    height: 100%;
+    width: 150px;
+}
+
+@media (max-width: 764px) {
+    .Car > .Condition {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .Car > .Details {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .Car > .CarModel {
+        padding-top: 10px;
+        width: 100%;
+
+    }
+    .Car > .CarModel > div {
+        width: 0;
+
+    }
+}

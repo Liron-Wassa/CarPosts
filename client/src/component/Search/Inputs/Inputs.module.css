@@ -1,0 +1,11 @@
+.Inputs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 650px) {
+    .Inputs {
+        justify-content: center;
+    }
+}

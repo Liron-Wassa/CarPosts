@@ -1,0 +1,39 @@
+.ModelInput {
+    width: 100px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.ModelInput > label {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.ModelInput > .Container {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.ModelInput > .Container > select {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: 0.9rem;
+}
+
+.ModelInput > .Container > select > option {
+    color: #000;
+}
+
+.Disabled {
+    color: #ccc;
+}

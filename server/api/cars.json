@@ -1,130 +1,130 @@
 [
     {
-        "modelName": "mazda",
-        "type": "3",
+        "modelName": "Mazda",
+        "modelType": "3",
         "image": "https://www.cartube.co.il/images/stories/mazda/mazda-3/2017/mazda3_hatchback_98-970px.jpg",
         "date": "2017",
         "price": "20000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "mazda",
-        "type": "3",
+        "modelName": "Mazda",
+        "modelType": "3",
         "image": "https://www.kvishim.co.il/wp-content/uploads/images-002/20170312_170624.jpg",
         "date": "2019",
         "price": "30000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "mazda",
-        "type": "3",
+        "modelName": "Mazda",
+        "modelType": "3",
         "image": "https://www.gear.co.il/Content/MediaItems/Catalog/Mazda/%D7%9E%D7%90%D7%96%D7%93%D7%94-3-%D7%A1%D7%93%D7%90%D7%9F-2017/900/%D7%9E%D7%90%D7%96%D7%93%D7%94-3-%D7%A1%D7%93%D7%90%D7%9F-2017-out003.jpg",
         "date": "2018",
         "price": "25000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "mazda",
-        "type": "3",
+        "modelName": "Mazda",
+        "modelType": "3",
         "image": "https://www.carbuy.co.il/images/stories/com_form2content/p1/f262/__5.jpg",
         "date": "2020",
         "price": "300000",
-        "condition": "new"
+        "condition": "New"
     },
     {
-        "modelName": "ford",
-        "type": "focus",
+        "modelName": "Ford",
+        "modelType": "Focus",
         "image": "https://picolio.auto123.com/15photo/ford/2015-ford-focus-se_1.png",
         "date": "2016",
         "price": "15000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "ford",
-        "type": "focus",
+        "modelName": "Ford",
+        "modelType": "Focus",
         "image": "https://www.cartube.co.il/images/stories/ford/general2/Ford-Focus_ST_2015_small.jpg",
         "date": "2018",
         "price": "85000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "ford",
-        "modelType": "mustang",
+        "modelName": "Ford",
+        "modelType": "Mustang",
         "image": "https://dreamcars.co.il/wp-content/uploads/2019/07/IMG_1192.jpg",
         "date": "2020",
         "price": "415000",
-        "condition": "new"
+        "condition": "New"
     },
     {
-        "modelName": "ford",
-        "modelType": "focus",
+        "modelName": "Ford",
+        "modelType": "Focus",
         "image": "https://www.cartube.co.il/media/showtime/storage/2020/05/06/30/main/ford-focus-active-2020-7.jpg?1588796378",
         "date": "2020",
         "price": "215000",
-        "condition": "new"
+        "condition": "New"
     },
     {
-        "modelName": "renault",
-        "modelType": "hatchback",
+        "modelName": "Renault",
+        "modelType": "Hatchback",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2015_Renault_Clio_%28X98%29_Expression_hatchback_%2826317268600%29.jpg/1024px-2015_Renault_Clio_%28X98%29_Expression_hatchback_%2826317268600%29.jpg",
         "date": "2019",
         "price": "95000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "renault",
-        "modelType": "hatchback",
+        "modelName": "Renault",
+        "modelType": "Hatchback",
         "image": "https://www.autos-motos.net/pictures/BE870635970/147036/image-01-B~v1559826646.JPG",
         "date": "2018",
         "price": "75000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "renault",
-        "modelType": "hatchback",
+        "modelName": "Renault",
+        "modelType": "Hatchback",
         "image": "https://1.bp.blogspot.com/-RPN6h7U7UP8/VU8fByJfZZI/AAAAAAAAGIE/m1-bEGC7IIM/s640/2015%2BRenault%2BClio%2BPrice%2BDesign%2BPerformance.jpg",
         "date": "2020",
         "price": "195000",
-        "condition": "new"
+        "condition": "New"
     },
     {
-        "modelName": "renault",
-        "modelType": "hatchback",
+        "modelName": "Renault",
+        "modelType": "Hatchback",
         "image": "https://scalethumb.leparking.fr/unsafe/331x248/smart/https://cloud.leparking.fr/2019/10/10/01/41/renault-megane-coupe-renault-megane-rs-2015_7161118780.jpg",
         "date": "2016",
         "price": "95000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "seat",
-        "modelType": "ibiza",
+        "modelName": "Seat",
+        "modelType": "Ibiza",
         "image": "https://www.carsforum.co.il/cars/images/cars/seat/ibiza-3dr/main.jpg",
         "date": "2016",
         "price": "55000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "seat",
-        "modelType": "ibiza",
+        "modelName": "Seat",
+        "modelType": "Ibiza",
         "image": "https://images.auto.co.il/Attachment/Gallery/1748/1626678/Seat-Ibiza-2016.png?width=500",
         "date": "2017",
         "price": "65000",
-        "condition": "used"
+        "condition": "Used"
     },
     {
-        "modelName": "seat",
-        "modelType": "leon",
+        "modelName": "Seat",
+        "modelType": "Leon",
         "image": "https://s1.cdn.autoevolution.com/images/gallery/SEAT-Leon-SC-3-doors-4766_20.jpg",
         "date": "2020",
         "price": "105000",
-        "condition": "new"
+        "condition": "New"
     },
     {
-        "modelName": "seat",
-        "modelType": "ibiza",
+        "modelName": "Seat",
+        "modelType": "Ibiza",
         "image": "https://thecar.co.il/wp-content/uploads/2015/07/SEAT-IBIZA-03.jpg",
         "date": "2019",
         "price": "95000",
-        "condition": "used"
+        "condition": "Used"
     }
 ]
