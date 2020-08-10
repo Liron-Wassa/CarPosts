@@ -7,7 +7,7 @@ const Car = (props) => (
             <div><p>Condition</p> <em>{props.car.condition}</em></div>
         </div>
         <div className={classes.Details}>
-            <div><p>Date</p> <em>{props.car.date}</em></div>
+            <div><p>Date</p> <em>{props.car.year}</em></div>
             <div><p>Price</p> <em>${props.car.price}</em></div>
         </div>
         <div className={classes.CarModel}>

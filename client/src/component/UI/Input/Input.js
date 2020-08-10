@@ -3,11 +3,11 @@ import React from 'react';
 
 const Input = (props) => {
 
-    let selectElement;
+    let inputElement;
 
     switch(props.type) {
         case 'number': {
-            selectElement = <input
+            inputElement = <input
                 className={classes.Input}
                 type={props.type}
                 placeholder={props.placeholder}
@@ -18,8 +18,7 @@ const Input = (props) => {
             break;
         }
         case 'select': {
-            selectElement = <select
-                className={!props.value ? classes.Blank : null}
+            inputElement = <select
                 name={props.name}
                 onChange={props.changeInput}
                 defaultValue={props.value}
@@ -31,10 +30,10 @@ const Input = (props) => {
             </select>
             break;
         }
-        default: selectElement = null;
+        default: inputElement = null;
     };
 
-    return selectElement;
+    return inputElement;
 };
 
 export default Input;

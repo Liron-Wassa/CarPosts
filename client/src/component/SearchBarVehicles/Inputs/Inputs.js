@@ -29,13 +29,13 @@ const Inputs = (props) => {
         <ModelInput
             title='Model'
             changeInput={props.changeInput}
-            modelValue={props.form.model.value}
-            producerValue={props.form.producer.value}
+            modelTypeValue={props.form.modelType.value}
+            modelNameValue={props.form.modelName.value}
         />
         <ProducerlInput
             title='Producer'
             changeInput={props.changeInput}
-            producerValue={props.form.producer.value}
+            modelNameValue={props.form.modelName.value}
         />
       </div>
   );

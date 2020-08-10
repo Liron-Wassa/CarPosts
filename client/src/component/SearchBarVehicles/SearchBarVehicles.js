@@ -1,10 +1,10 @@
-import classes from './Search.module.css';
+import classes from './SearchBarVehicles.module.css';
 import Inputs from './Inputs/Inputs';
 import React from 'react';
 
-const Search = (props) => {
+const SearchBarVehicles = (props) => {
   return (
-    <form className={classes.Search} onSubmit={(e) => props.searchCars(e)}>
+    <form className={classes.SearchBarVehicles} onSubmit={(e) => props.searchCars(e)}>
       <h2>Find Your Car</h2>
       <Inputs
         changeInput={props.changeInput}
@@ -17,4 +17,4 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+export default SearchBarVehicles;

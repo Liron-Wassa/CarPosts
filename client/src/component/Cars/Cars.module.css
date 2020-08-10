@@ -2,3 +2,11 @@
     width: 80%;
     margin: 0 auto;
 }
+
+.Message {
+    text-align: center;
+    color: #ff7100;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 500;
+}

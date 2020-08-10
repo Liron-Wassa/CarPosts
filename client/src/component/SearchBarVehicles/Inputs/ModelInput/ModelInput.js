@@ -6,7 +6,7 @@ import React from 'react';
 const ModelInput = (props) => {
 
     const carModels = {
-        Mazda: ['None', '3'],
+        Mazda: ['None', '2', '3', '6', 'CX5'],
         Ford: ['None', 'Focus', 'Mustang'],
         Renault: ['None', 'Hatchback'],
         Seat: ['None', 'Ibiza', 'Leon'],
@@ -15,15 +15,19 @@ const ModelInput = (props) => {
 
     return (
         <div className={classes.ModelInput}>
-            <label className={!props.producerValue ? classes.Disabled : null}>{props.title}</label>
+            <label
+                className={!props.modelNameValue || props.modelNameValue === 'None' ? classes.Disabled : null}
+            >
+                {props.title}
+            </label>
             <div className={classes.Container}>
                 <Input
                     type='select'
-                    values={carModels[props.producerValue ? props.producerValue : 'None']}
-                    name='model'
+                    values={props.modelNameValue ? carModels[props.modelNameValue] : carModels.None}
+                    name='modelType'
                     changeInput={props.changeInput}
-                    value={props.modelValue}
-                    disabled={!props.producerValue}
+                    value={props.modelTypeValue}
+                    disabled={!props.modelNameValue || props.modelNameValue === 'None'}
                 />
             </div>
         </div>

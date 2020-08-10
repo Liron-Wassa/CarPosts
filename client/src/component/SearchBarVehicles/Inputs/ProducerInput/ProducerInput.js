@@ -9,9 +9,9 @@ const ProducerInput = (props) => (
             <Input
                 type='select'
                 values={['None', 'Mazda', 'Ford', 'Renault', 'Seat']}
-                name='producer'
+                name='modelName'
                 changeInput={props.changeInput}
-                value={props.producerValue}
+                value={props.modelNameValue}
             />
         </div>
     </div>
