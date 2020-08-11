@@ -1,5 +1,6 @@
 const cars = require('./api/cars.json');
 const express = require('express');
+const path = require('path');
 const app = express();
 
 app.get('/cars', (req, res) => {
@@ -54,6 +55,14 @@ function checkFilterValidity(key, query, car, filterIsValid) {
     else if(filterIsValid && key === 'condition') {
         return car[key] === query[key];
     }
+};
+
+if (process.env.NODE_ENV === "production" || true) {
+    const root = path.join(__dirname, "..", 'client', 'build')
+    app.use(express.static(root));
+    app.get("*", (req, res) => {
+      res.sendFile('index.html', { root });
+    });
 };
 
 app.listen(process.env.PORT || 5000, () => {

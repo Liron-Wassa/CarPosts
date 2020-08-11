@@ -1,8 +1,6 @@
 .ModelInput {
     width: 100px;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-left: 10px;
 }
 
 .ModelInput > label {

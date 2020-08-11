@@ -1,0 +1,23 @@
+{
+  "name": "carposts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm install && node app.js",
+    "client-install": "cd client && npm install",
+    "react-build": "cd client && npm run build",
+    "heroku-postbuild": "npm run client-install && npm run react-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liron-Wassa/car-posts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liron-Wassa/car-posts/issues"
+  },
+  "homepage": "https://github.com/Liron-Wassa/car-posts#readme"
+}

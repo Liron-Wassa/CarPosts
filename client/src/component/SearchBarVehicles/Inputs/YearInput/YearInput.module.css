@@ -1,8 +1,6 @@
 .YearInput {
     width: 150px;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-left: 10px;
 }
 
 .YearInput > label {

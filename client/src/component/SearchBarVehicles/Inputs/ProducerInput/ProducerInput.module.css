@@ -1,8 +1,6 @@
 .ProducerInput {
     width: 80px;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-left: 10px;
 }
 
 .ProducerInput > label {

@@ -1,7 +1,17 @@
 .Inputs {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+}
+
+.Inputs > div {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.Inputs > div:first-child {
+    margin-left: 0;
 }
 
 @media (max-width: 650px) {
