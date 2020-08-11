@@ -1,7 +1,7 @@
-import SearchBarVehicles from '../component/SearchBarVehicles/SearchBarVehicles';
+import SearchBarVehicles from '../components/SearchBarVehicles/SearchBarVehicles';
 import React, { useState, useEffect } from 'react';
-import Modal from '../component/UI/Modal/Modal';
-import Cars from '../component/Cars/Cars';
+import Modal from '../components/UI/Modal/Modal';
+import Cars from '../components/Cars/Cars';
 import axios from 'axios';
 
 const CarPosts = () => {

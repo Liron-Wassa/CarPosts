@@ -1,4 +1,4 @@
-import CarPosts from './container/CarPosts';
+import CarPosts from './containers/CarPosts';
 import Layout from './hoc/Layout/Layout';
 import React from 'react';
 
