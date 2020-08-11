@@ -30,15 +30,17 @@ const CarPosts = () => {
         }
     };
 
+    const [isNotFound, setIsNotFound] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [form, seForm] = useState(carForm);
     const [error, setError] = useState('');
     const [cars, setCars] = useState([]);
 
-      useEffect(() => {
+    useEffect(() => {
         setIsLoading(true);
         axios.get('/cars', {
         }).then(response => {
+            if(!response.data.length) setIsNotFound(true);
             setCars(response.data);
             setIsLoading(false);
         }).catch(error => {
@@ -78,6 +80,7 @@ const CarPosts = () => {
         axios.get('/cars', {
             params: query
         }).then(response => {
+            if(!response.data.length) setIsNotFound(true);
             setCars(response.data);
             setIsLoading(false);
         }).catch(error => {
@@ -100,6 +103,7 @@ const CarPosts = () => {
             <Cars 
                 cars={cars}
                 isLoading={isLoading}
+                isNotFound={isNotFound}
             />
         </React.Fragment>
     );

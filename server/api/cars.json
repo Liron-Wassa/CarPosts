@@ -156,8 +156,24 @@
         "modelType": "Focus",
         "image": "https://photos.yad2.co.il/photos/submodels/o/25860.png",
         "year": "2020",
-        "price": "1955000",
+        "price": "295000",
         "condition": "New"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Mustang",
+        "image": "https://images.auto.co.il/Attachment/Gallery/236347//1581437/original.jpg?width=500",
+        "year": "2020",
+        "price": "315000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Mustang",
+        "image": "https://www.icar.co.il/_media/userfiles/image/images/%D7%A4%D7%95%D7%A8%D7%93%20%D7%9E%D7%95%D7%A1%D7%98%D7%A0%D7%92%20%D7%94%D7%97%D7%93%D7%A9%D7%94.jpg",
+        "year": "2016",
+        "price": "115000",
+        "condition": "Used"
     },
     {
         "modelName": "Ford",
@@ -166,6 +182,78 @@
         "year": "2020",
         "price": "415000",
         "condition": "New"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Mustang",
+        "image": "https://www.autosport.co.il/wp-content/uploads/2015/03/1987949039171574299.jpg",
+        "year": "2014",
+        "price": "105000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Fiesta",
+        "image": "https://www.icar.co.il/_media/galleries/3180.jpg",
+        "year": "2014",
+        "price": "35000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Fiesta",
+        "image": "https://www.kvishim.co.il/wp-content/uploads/images-007/ford-fiesta-1.jpg",
+        "year": "2015",
+        "price": "38000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Fiesta",
+        "image": "https://photos.yad2.co.il/photos/submodels/o/26070.png",
+        "year": "2020",
+        "price": "95000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "Fiesta",
+        "image": "https://m.auto.co.il/Attachment/Gallery/234320/1589734/_crop_to50_750x750.jpg",
+        "year": "2014",
+        "price": "27000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "GTR1",
+        "image": "https://i.ytimg.com/vi/PbhsExiKnUY/maxresdefault.jpg",
+        "year": "2015",
+        "price": "505000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "GTR1",
+        "image": "https://live.staticflickr.com/3704/12291604566_e3cc6f747a_h.jpg",
+        "year": "2014",
+        "price": "444450",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "GTR1",
+        "image": "https://n7.nextpng.com/sticker-png/515/38/sticker-png-shelby-mustang-2018-ford-mustang-car-ford-shelby-gt350-ford-driving-car-performance-car-vehicle-thumbnail.png",
+        "year": "2018",
+        "price": "755250",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Ford",
+        "modelType": "GTR1",
+        "image": "https://n7.nextpng.com/sticker-png/577/787/sticker-png-2010-ford-shelby-gt500-ford-mustang-ford-gt-ford-f-series-ford-compact-car-glass-blue-computer-wallpaper-thumbnail.png",
+        "year": "2019",
+        "price": "850000",
+        "condition": "Used"
     },
     {
         "modelName": "Renault",
@@ -197,6 +285,102 @@
         "image": "https://scalethumb.leparking.fr/unsafe/331x248/smart/https://cloud.leparking.fr/2019/10/10/01/41/renault-megane-coupe-renault-megane-rs-2015_7161118780.jpg",
         "year": "2016",
         "price": "95000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Megane",
+        "image": "https://www.renault.co.il/CountriesData/Israel/images/cars/GrandCoupe/packshots/grandCoupe-executive_ig_w600_h337.jpg",
+        "year": "2020",
+        "price": "155000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Megane",
+        "image": "https://www.ynet.co.il/PicServer5/2019/01/25/9025824/90258105972098640360no.jpg",
+        "year": "2016",
+        "price": "95000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Megane",
+        "image": "https://images.auto.co.il/Attachment/Gallery/238573//1587945/original.jpg?width=1016",
+        "year": "2014",
+        "price": "45000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Megane",
+        "image": "https://www.renault.co.il/CountriesData/Israel/images/cars/GrandCoupe/product/grandCoupe-g2_ig_w1500_h843.jpg",
+        "year": "2020",
+        "price": "75000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Clio",
+        "image": "https://www.cartube.co.il/images/stories/renault/clio/2019/renault_clio_9717-970px.jpg",
+        "year": "2020",
+        "price": "153000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Clio",
+        "image": "https://carclick.co.il/wp-content/uploads/2015/11/%D7%A8%D7%A0%D7%95-%D7%A7%D7%9C%D7%99%D7%90%D7%95-2017-1.jpg",
+        "year": "2020",
+        "price": "175000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Clio",
+        "image": "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/559332",
+        "year": "2014",
+        "price": "65000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Clio",
+        "image": "https://www.carbuy.co.il/images/stories/com_form2content/p1/f178/image1-1.jpg",
+        "year": "2015",
+        "price": "48000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Koleos",
+        "image": "https://www.cartube.co.il/images/stories/renault/koleos/general/Renault-Koleos-2020-1600-01-970px.jpg",
+        "year": "2019",
+        "price": "148000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Koleos",
+        "image": "https://www.renault.co.il/CountriesData/Israel/images/cars/koleos/packshots/koleos-initiale-paris_ig_w600_h337.jpg",
+        "year": "2020",
+        "price": "295000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Koleos",
+        "image": "https://www.renault.co.il/CountriesData/Israel/images/cars/koleos/design/koleos-exterior-img01_ig_w1500_h843.jpg",
+        "year": "2019",
+        "price": "179000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Renault",
+        "modelType": "Koleos",
+        "image": "https://images.auto.co.il/Attachment/Gallery/239202/1591479/_crop_to50_1023x370.png?height=302",
+        "year": "2018",
+        "price": "168000",
         "condition": "Used"
     },
     {
@@ -238,5 +422,93 @@
         "year": "2020",
         "price": "105000",
         "condition": "New"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Leon",
+        "image": "https://www.cartube.co.il/images/stories/seat/leon/2020/IPP-All-new-SEAT-Leon_45_HQ-970px.jpg",
+        "year": "2020",
+        "price": "125000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Leon",
+        "image": "https://wheel.co.il/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-25-at-15.52.14.jpeg",
+        "year": "2015",
+        "price": "65000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Leon",
+        "image": "https://www.cartube.co.il/images/stories/seat/leon/2018/DGT_79352_Gallery_Site_Pics_1440x800_leon_5D2-970px.jpg",
+        "year": "2016",
+        "price": "105000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Arona",
+        "image": "https://www.automag.co.il/wp-content/uploads/2017/10/SEAT-Arona-048L.jpg",
+        "year": "2016",
+        "price": "105000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Arona",
+        "image": "https://www.icar.co.il/_media/images/models/new/seat/arona/New/seat-arona-New-Front.jpg",
+        "year": "2014",
+        "price": "105000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Arona",
+        "image": "https://www.carcost.co.il/Images/CkfinderUpluad/images/%D7%A1%D7%99%D7%90%D7%98%20%D7%90%D7%A8%D7%95%D7%A0%D7%94%20%D7%97%D7%A6%D7%95%D7%A0%D7%99%201.jpg",
+        "year": "2015",
+        "price": "135000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Arona",
+        "image": "https://images.auto.co.il/Attachment/Gallery/241321/1620752/ARONA%20022_a%20copy.jpg?width=500",
+        "year": "2020",
+        "price": "255000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Ateca",
+        "image": "https://www.cartube.co.il/media/showtime/storage/2020/06/15/71/main/seat_ateca_01_hq.jpg?1592212082",
+        "year": "2020",
+        "price": "355000",
+        "condition": "New"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Ateca",
+        "image": "https://www.icar.co.il/_media/images/models/new/seat/ateca/New/seat-ateca-New-front.jpg",
+        "year": "2018",
+        "price": "165000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Ateca",
+        "image": "https://www.seat.co.il/wp-content/uploads/2020/01/item3.resizedViewPort.scale_.vehicleExteriorModelImage.png",
+        "year": "2019",
+        "price": "272000",
+        "condition": "Used"
+    },
+    {
+        "modelName": "Seat",
+        "modelType": "Ateca",
+        "image": "https://www.kvishim.co.il/wp-content/uploads/images-006/Seat-Ateca-2017-3.jpg",
+        "year": "2017",
+        "price": "135000",
+        "condition": "Used"
     }
 ]

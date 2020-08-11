@@ -5,14 +5,14 @@ import React from 'react';
 
 const Cars = (props) => {
     let carElemets = <Spinner />;
-    if(!props.isLoading && props.cars.length) {
+    if(!props.isLoading) {
         carElemets = props.cars.map(car => (
             <Car key={car.image} car={car} />
         ));
     };
     return <section className={classes.Cars}>
-        {props.cars.length ? carElemets :
-        <p className={classes.Message}>Not Found!</p>}
+        {carElemets}
+        {props.isNotFound ? <p className={classes.Message}>Not Found!</p> : null }
     </section>
 };
 

@@ -7,9 +7,9 @@ const ModelInput = (props) => {
 
     const carModels = {
         Mazda: ['None', '2', '3', '6', 'CX5'],
-        Ford: ['None', 'Focus', 'Mustang'],
-        Renault: ['None', 'Hatchback'],
-        Seat: ['None', 'Ibiza', 'Leon'],
+        Ford: ['None', 'Focus', 'Mustang', 'Fiesta', 'GTR1'],
+        Renault: ['None', 'Hatchback', 'Megane', 'Clio', 'Koleos'],
+        Seat: ['None', 'Ibiza', 'Leon', 'Arona', 'Ateca'],
         None: ['None']
     };
 
