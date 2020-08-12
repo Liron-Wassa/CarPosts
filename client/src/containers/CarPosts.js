@@ -76,6 +76,7 @@ const CarPosts = () => {
     const searchCars = (e) => {
         e.preventDefault();
         const query = getQuery();
+        setIsNotFound(false);
         setIsLoading(true);
         axios.get('/cars', {
             params: query

@@ -27,7 +27,7 @@
 }
 
 .Car > .CarModel > img {
-    height: 100%;
+    height: 100px;
     width: 150px;
 }
 
