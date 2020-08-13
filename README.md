@@ -1,7 +1,7 @@
 # Introduction
 Car Posts
 <br/>
-Live link: https://gentle-ravine-50261.herokuapp.com/
+Live link: https://car-posts.herokuapp.com/
 
 ## Technologies
 - React Hooks
@@ -14,7 +14,7 @@ Live link: https://gentle-ravine-50261.herokuapp.com/
 
 ## How to use?
 - The web app by default gives you cars that filtered by current date
-- You can filter car by the following keywords inputs
+- You can filter car by the following keywords
 - Producer, Model, Year, Condition, Price
 
 ## Functionalities
