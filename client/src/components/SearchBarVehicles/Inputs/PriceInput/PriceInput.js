@@ -12,6 +12,7 @@ const PriceInput = (props) => (
                 name='fromPrice'
                 changeInput={props.changeInput}
                 value={props.fromPriceValue}
+                min={1}
             />
             <Input
                 type='number'
@@ -19,6 +20,7 @@ const PriceInput = (props) => (
                 name='toPrice'
                 changeInput={props.changeInput}
                 value={props.toPriceValue}
+                min={1}
             />
         </div>
     </div>

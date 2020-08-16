@@ -14,6 +14,7 @@ const Input = (props) => {
                 name={props.name}
                 onChange={props.changeInput}
                 value={props.value}
+                min={props.min}
             />
             break;
         }

@@ -3,6 +3,12 @@ import Inputs from './Inputs/Inputs';
 import React from 'react';
 
 const SearchBarVehicles = (props) => {
+
+  let buttonStyle = classes.Allowed;
+  // if(props.formIsValid) {
+  //   buttonStyle = classes.Allowed;
+  // };
+
   return (
     <form className={classes.SearchBarVehicles} onSubmit={(e) => props.searchCars(e)}>
       <h2>Find Your Car</h2>
@@ -11,7 +17,9 @@ const SearchBarVehicles = (props) => {
         form={props.form}
       />
       <div className={classes.Btn}>
-        <button>Search</button>
+        <button
+          className={buttonStyle}
+        >Search</button>
       </div>
     </form>
   );

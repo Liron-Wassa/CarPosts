@@ -33,9 +33,18 @@
     font-size: 14px;
     letter-spacing: 1px;
     border-radius: 3px;
-    cursor: pointer;
     outline: none;
 }
+
+/* .Disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.Allowed {
+    background-color: #ff7100;
+    cursor: pointer;
+} */
 
 @media (max-width: 650px) {
     .SearchBarVehicles {
@@ -46,4 +55,5 @@
 
 .SearchBarVehicles > .Btn > button:hover {
     background-color: #974c0e;
-};
+    cursor: pointer;
+}

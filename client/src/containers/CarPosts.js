@@ -64,7 +64,7 @@ const CarPosts = () => {
 
     const getQuery = () => {
         const result = {};
-        let pattern = ['None', 'From', 'To'];
+        const pattern = ['None', 'From', 'To'];
         for (const key in form) {
             if(form[key].value.trim() && !pattern.includes(form[key].value.trim())) {
                 result[key] = form[key].value;
