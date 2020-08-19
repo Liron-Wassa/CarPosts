@@ -1,4 +1,6 @@
+import AuthContextProvider from './contexts/AuthContext';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
@@ -6,7 +8,11 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

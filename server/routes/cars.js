@@ -5,7 +5,9 @@ const router = express.Router();
 router.get('/cars', (req, res) => {
     const query = req.query;
     if(query.modelType && !query.modelName) {
-        return res.sendStatus(404);
+        return res.status(404).json({
+            message: 'Request failed'
+        });
     }
     else if(Object.keys(query).length) {
         const filterdCars = flterCars(query);

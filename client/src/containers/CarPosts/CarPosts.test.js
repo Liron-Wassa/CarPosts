@@ -1,8 +1,8 @@
-import SearchBarVehicles from '../component/SearchBarVehicles/SearchBarVehicles';
-import Modal from '../component/UI/Modal/Modal';
+import SearchBarVehicles from '../../component/SearchBarVehicles/SearchBarVehicles';
+import Modal from '../../component/UI/Modal/Modal';
 import Adapter from 'enzyme-adapter-react-16';
+import Cars from '../../component/Cars/Cars';
 import { configure, shallow } from 'enzyme';
-import Cars from '../component/Cars/Cars';
 import CarPosts from './CarPosts';
 import React from 'react';
 

@@ -18,6 +18,39 @@ const Input = (props) => {
             />
             break;
         }
+        case 'text': {
+            inputElement = <input
+                className={classes.Input}
+                type={props.type}
+                placeholder={props.placeholder}
+                name={props.name}
+                onChange={props.changeInput}
+                value={props.value}
+            />
+            break;
+        }
+        case 'email': {
+            inputElement = <input
+                className={classes.Input}
+                type={props.type}
+                placeholder={props.placeholder}
+                name={props.name}
+                onChange={props.changeInput}
+                value={props.value}
+            />
+            break;
+        }
+        case 'password': {
+            inputElement = <input
+                className={classes.Input}
+                type={props.type}
+                placeholder={props.placeholder}
+                name={props.name}
+                onChange={props.changeInput}
+                value={props.value}
+            />
+            break;
+        }
         case 'select': {
             inputElement = <select
                 name={props.name}

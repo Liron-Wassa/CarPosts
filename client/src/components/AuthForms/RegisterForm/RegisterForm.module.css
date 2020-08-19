@@ -1,0 +1,11 @@
+.RegisterForm {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.RegisterForm > span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: red;
+}

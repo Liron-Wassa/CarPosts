@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/Liron-Wassa/car-posts/issues"
   },
-  "homepage": "https://github.com/Liron-Wassa/car-posts#readme"
+  "homepage": "https://github.com/Liron-Wassa/car-posts#readme",
+  "dependencies": {}
 }

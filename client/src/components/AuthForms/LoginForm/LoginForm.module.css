@@ -1,0 +1,11 @@
+.LoginForm {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.LoginForm > span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: red;
+}

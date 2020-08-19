@@ -1,11 +1,46 @@
-import CarPosts from './containers/CarPosts';
+import Register from './containers/Auth/Register/Register';
+import { Switch, Route, Redirect } from "react-router-dom";
+import CarPosts from './containers/CarPosts/CarPosts';
+import Logout from './containers/Auth/Logout/Logout';
+import React, { useEffect, useContext } from 'react';
+import { AuthContext } from './contexts/AuthContext';
+import Landing from './components/Landing/Landing';
+import Login from './containers/Auth/Login/Login';
 import Layout from './hoc/Layout/Layout';
-import React from 'react';
 
 const App = () => {
+
+  const { isAuthenticated, tryAutoLogin } = useContext(AuthContext);
+
+  useEffect(() => {
+    tryAutoLogin();
+    // eslint-disable-next-line
+  }, []);
+
+  let routes = (
+    <Switch>
+      <Route exact path='/' component={Landing} />
+      <Route path='/register' component={Register} />
+      <Route path='/login' component={Login} />
+      <Redirect to="/" />
+    </Switch>
+  );
+
+  if(isAuthenticated) {
+    routes = (
+      <Switch>
+        <Route path='/register' component={Register} />
+        <Route path='/login' component={Login} />
+        <Route path='/logout' component={Logout} />
+        <Route path='/posts' component={CarPosts} />
+        <Redirect to="/posts" />
+      </Switch>
+    );
+  };
+
   return (
     <Layout>
-      <CarPosts />
+      {routes}
     </Layout>
   );
 }

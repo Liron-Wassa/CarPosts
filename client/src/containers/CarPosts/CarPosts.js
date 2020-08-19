@@ -1,7 +1,7 @@
-import SearchBarVehicles from '../components/SearchBarVehicles/SearchBarVehicles';
+import SearchBarVehicles from '../../components/SearchBarVehicles/SearchBarVehicles';
 import React, { useState, useEffect } from 'react';
-import Modal from '../components/UI/Modal/Modal';
-import Cars from '../components/Cars/Cars';
+import Modal from '../../components/UI/Modal/Modal';
+import Cars from '../../components/Cars/Cars';
 import axios from 'axios';
 
 const CarPosts = () => {
@@ -37,24 +37,32 @@ const CarPosts = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
+        let isCanceled = false;
         setIsLoading(true);
         axios.get('/cars', {
         }).then(response => {
-            if(!response.data.length) setIsNotFound(true);
-            setCars(response.data);
-            setIsLoading(false);
+            if(!isCanceled){
+                if(!response.data.length) setIsNotFound(true);
+                setCars(response.data);
+                setIsLoading(false);
+            };
         }).catch(error => {
-            setError(error.message);
-            setIsLoading(false);
+            if(!isCanceled){
+                setError(error.response.data.message);
+                setIsLoading(false);
+            };
         });
+        return () => {
+            isCanceled = true;
+        };
     }, []);
 
-    const changeInputHandler = (e) => {
+    const changeInputHandler = (event) => {
         const tempForm = {...form};
-        const tempField = {...tempForm[e.target.name]};
-        tempField.value = e.target.value;
-        tempForm[e.target.name] = tempField;
-        if(e.target.name === 'modelName') {
+        const tempField = {...tempForm[event.target.name]};
+        tempField.value = event.target.value;
+        tempForm[event.target.name] = tempField;
+        if(event.target.name === 'modelName') {
             const tempModelTypeField = {...tempForm.modelType};
             tempModelTypeField.value = 'None';
             tempForm.modelType = tempModelTypeField;
@@ -73,8 +81,8 @@ const CarPosts = () => {
         return result;
     };
 
-    const searchCars = (e) => {
-        e.preventDefault();
+    const searchCars = (event) => {
+        event.preventDefault();
         const query = getQuery();
         setIsNotFound(false);
         setIsLoading(true);
@@ -85,7 +93,7 @@ const CarPosts = () => {
             setCars(response.data);
             setIsLoading(false);
         }).catch(error => {
-            setError(error.message);
+            setError(error.response.data.message);
             setIsLoading(false);
         });
     };

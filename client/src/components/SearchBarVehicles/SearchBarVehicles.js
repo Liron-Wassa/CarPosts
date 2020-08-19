@@ -10,7 +10,7 @@ const SearchBarVehicles = (props) => {
   // };
 
   return (
-    <form className={classes.SearchBarVehicles} onSubmit={(e) => props.searchCars(e)}>
+    <form className={classes.SearchBarVehicles} onSubmit={(event) => props.searchCars(event)}>
       <h2>Find Your Car</h2>
       <Inputs
         changeInput={props.changeInput}
