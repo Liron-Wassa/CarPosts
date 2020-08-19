@@ -36,16 +36,6 @@
     outline: none;
 }
 
-/* .Disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.Allowed {
-    background-color: #ff7100;
-    cursor: pointer;
-} */
-
 @media (max-width: 650px) {
     .SearchBarVehicles {
         width: 100%;

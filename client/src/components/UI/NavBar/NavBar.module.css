@@ -6,7 +6,6 @@
     height: 60px;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    /* border-top: 5px solid #ff7100; */
     box-sizing: border-box;
     z-index: 2000;
 }
@@ -46,8 +45,8 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-decoration: none;
     color: rgb(129, 126, 126);
     cursor: pointer;
