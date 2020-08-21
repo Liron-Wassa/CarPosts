@@ -20,7 +20,7 @@ const userRoute = require('./routes/user');
 app.use(express.json());
 dotenv.config();
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://car-posts.herokuapp.com',
   credentials: true
 }));
 app.use(expressSession({
@@ -38,7 +38,7 @@ app.use('/', carsRoute);
 app.use('/', userRoute);
 
 if (process.env.NODE_ENV === "production") {
-  const root = path.join(__dirname, "..", 'client', 'build')
+  const root = path.join(__dirname, "..", 'client', 'build');
   app.use(express.static(root));
   app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
