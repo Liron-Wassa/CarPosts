@@ -19,16 +19,13 @@ const userRoute = require('./routes/user');
 //Config
 app.use(express.json());
 dotenv.config();
-app.use(cors({
-  origin: 'https://car-posts.herokuapp.com',
-  credentials: true
-}));
+app.use(cors());
 app.use(expressSession({
-  secret: process.env.SECRET,
+  secret: 'rusty-is-the-best',
   resave: true,
   saveUninitialized: true
 }));
-app.use(cookieParser(process.env.SECRET));
+app.use(cookieParser('rusty-is-the-best'));
 app.use(passport.initialize());
 app.use(passport.session());
 passportConfig(passport);
