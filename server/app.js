@@ -19,13 +19,16 @@ const userRoute = require('./routes/user');
 //Config
 app.use(express.json());
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 app.use(expressSession({
-  secret: 'rusty-is-the-best',
+  secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true
 }));
-app.use(cookieParser('rusty-is-the-best'));
+app.use(cookieParser(process.env.SECRET));
 app.use(passport.initialize());
 app.use(passport.session());
 passportConfig(passport);
