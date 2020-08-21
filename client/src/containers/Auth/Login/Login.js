@@ -1,7 +1,6 @@
 import LoginForm from '../../../components/AuthForms/LoginForm/LoginForm';
 import { checkValueValidity } from '../../../utils/checkValueValidity';
 import React, { useState, useContext, useEffect } from 'react';
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import { AuthContext } from '../../../contexts/AuthContext';
 import FacebookLoginWithButton from 'react-facebook-login';
 import { Redirect } from 'react-router-dom';
@@ -14,12 +13,16 @@ const Login = () => {
         authWithFacebook,
         isAuthenticated,
         loginError,
-        setIsChangeRoute
+        setLoginError,
     } = useContext(AuthContext);
 
     useEffect(() => {
-        setIsChangeRoute(false);
-    }, [setIsChangeRoute]);
+        return () => {
+            if(loginError) {
+                setLoginError('');
+            };
+        };
+    }, [loginError, setLoginError]);
 
     const loginForm = {
         email: {
@@ -79,20 +82,22 @@ const Login = () => {
         <React.Fragment>
             <LoginForm
                 login={login}
+                isLoading={isLoading}
                 form={form}
                 change={changeInputHandler}
                 error={loginError}
                 formIsValid={formIsValid}
             />
-            <FacebookLoginWithButton
-                appId="651865205423153"
-                fields="name,email,picture"
-                callback={responseFacebook}
-                redirectUri={true}
-                // cssClass={faceBookLoginButton}
-                // icon="fa-facebook"
-            />
-            {isLoading ? <Spinner /> : null }
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <FacebookLoginWithButton
+                    appId="651865205423153"
+                    fields="name,email,picture"
+                    callback={responseFacebook}
+                    redirectUri={true}
+                    icon="fa-facebook"
+                    textButton='sign in with facebook'
+                />
+            </div>
         </React.Fragment>
     );
 };

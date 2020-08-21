@@ -10,7 +10,7 @@ export const checkValueValidity = (value, rules) => {
         isValid = regex.test(value);
     };
     if(rules.isPassword) {
-        const regex = /\d{5}\d+/g;
+        const regex = /(\d|[a-zA-Z]){6,}/g;
         isValid = regex.test(value);
     };
 

@@ -1,20 +1,17 @@
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import { AuthContext } from '../../../contexts/AuthContext';
 import React, { useEffect, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 
 const Logout = () => {
 
-    const { logout, isLogout } = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
     
     useEffect(() => {
         logout();
         // eslint-disable-next-line
     }, []);
 
-    return (
-        isLogout ? <Redirect to='/' /> : <Spinner />
-    );
+    return <Redirect to='/' />;
 };
 
 export default Logout;

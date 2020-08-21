@@ -1,9 +1,8 @@
 import RegisterForm from '../../../components/AuthForms/RegisterForm/RegisterForm';
 import { checkValueValidity } from '../../../utils/checkValueValidity';
-import Spinner from '../../../components/UI/Spinner/Spinner';
+import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import FacebookLoginWithButton from 'react-facebook-login';
-import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 
 const Register = () => {
@@ -12,10 +11,21 @@ const Register = () => {
         register,
         isLoading,
         authWithFacebook,
-        isChangeRoute,
+        isSignUp,
+        setIsSignUp,
         registerError,
+        setRegisterError,
         isAuthenticated
     } = useContext(AuthContext);
+
+    useEffect(() => {
+        return () => {
+            setIsSignUp(false);
+            if(registerError) {
+                setRegisterError('');
+            };
+        };
+    }, [setIsSignUp, registerError, setRegisterError]);
 
     const registerform = {
         name: {
@@ -82,7 +92,7 @@ const Register = () => {
         authWithFacebook(name, email, facebookId, token);
     };
 
-    if(isChangeRoute) {
+    if(isSignUp) {
         return <Redirect to='/login' />;
     };
 
@@ -95,19 +105,21 @@ const Register = () => {
             <RegisterForm
                 register={register}
                 form={form}
+                isLoading={isLoading}
                 change={changeInputHandler}
                 error={registerError}
                 formIsValid={formIsValid}
             />
-            <FacebookLoginWithButton
-                appId="651865205423153"
-                fields="name,email,picture"
-                callback={responseFacebook}
-                redirectUri={true}
-                // cssClass={faceBookLoginButton}
-                // icon="fa-facebook"
-            />
-            {isLoading ? <Spinner /> : null }
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <FacebookLoginWithButton
+                    appId="651865205423153"
+                    fields="name,email,picture"
+                    callback={responseFacebook}
+                    redirectUri={true}
+                    icon="fa-facebook"
+                    textButton='continue with facebook'
+                />
+            </div>
         </React.Fragment>
     );
 };

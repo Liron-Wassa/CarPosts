@@ -6,14 +6,14 @@ export const AuthContext = createContext();
 const AuthContextProvider = (props) => {
  
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isChangeRoute, setIsChangeRoute] = useState(false);
+    const [loadUserData, setLoadUserData] = useState(false);
     const [registerError, setRegisterError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [loginError, setLoginError] = useState('');
-    const [isLogout, setIsLogout] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(false);
     
     const tryAutoLogin = () => {
-        const userId = localStorage.getItem('userId');
+        const userId = JSON.parse(localStorage.getItem('userId'));
         if(!userId) {
             logout();
         }
@@ -23,25 +23,19 @@ const AuthContextProvider = (props) => {
     };
 
     const checkUserConnection = () => {
+        setLoadUserData(true);
         axios.get('/user').then(response => {
             if(response.status === 200 && response.data) {
-                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('userId', JSON.stringify(response.data.userId));
                 setIsAuthenticated(true);
             }
             else {
                 localStorage.removeItem('userId');
                 setIsAuthenticated(false);
             };
+            setLoadUserData(false);
         });
     };
-
-    // const authWithFacebook = (name, email, facebookId) => {
-    //     axios.get('/auth/facebook').then(response => {
-    //         console.log(response);
-    //     }).catch(err => {
-    //         console.log(err);
-    //     });
-    // };
 
     const authWithFacebook = (name, email, facebookId) => {
         axios.post('/auth/facebook', {
@@ -50,8 +44,7 @@ const AuthContextProvider = (props) => {
             facebookId: facebookId,
             password: facebookId
         }).then(response => {
-            localStorage.setItem('userId', response.data.userId);
-            setIsLogout(false);
+            localStorage.setItem('userId', JSON.stringify(response.data.userId));
             setIsAuthenticated(true);
         }).catch(error => {
             setLoginError(error.response.data.message);
@@ -66,8 +59,7 @@ const AuthContextProvider = (props) => {
             email: form.email.value,
             password: form.password.value
         }).then(response => {
-            localStorage.setItem('userId', response.data.userId);
-            setIsLogout(false);
+            localStorage.setItem('userId', JSON.stringify(response.data.userId));
             setIsLoading(false);
             setIsAuthenticated(true);
         }).catch(error => {
@@ -88,7 +80,7 @@ const AuthContextProvider = (props) => {
         }).then(response => {
             if(response.status === 201) {
                 setIsLoading(false);
-                setIsChangeRoute(true);
+                setIsSignUp(true);
             };
         }).catch(error => {
             setIsLoading(false);
@@ -100,28 +92,31 @@ const AuthContextProvider = (props) => {
         axios.get('/logout').then(response => {
             if(response.status === 200) {
                 localStorage.removeItem('userId');
-                setIsLogout(true);
                 setIsAuthenticated(false);
             };
         });
     };
 
-    return <AuthContext.Provider value={{
-        logout,
-        register,
-        login,
-        tryAutoLogin,
-        setIsChangeRoute,
-        authWithFacebook,
-        isLoading,
-        isChangeRoute,
-        registerError,
-        loginError,
-        isAuthenticated,
-        isLogout
-    }}>
-        {props.children}
-    </AuthContext.Provider>
+    return (
+        <AuthContext.Provider value={{
+            logout,
+            register,
+            login,
+            tryAutoLogin,
+            setIsSignUp,
+            authWithFacebook,
+            setRegisterError,
+            setLoginError,
+            loadUserData,
+            isLoading,
+            isSignUp,
+            registerError,
+            loginError,
+            isAuthenticated
+        }}>
+            {props.children}
+        </AuthContext.Provider>
+    );
 };
 
 export default AuthContextProvider;

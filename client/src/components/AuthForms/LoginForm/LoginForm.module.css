@@ -1,6 +1,7 @@
 .LoginForm {
+    position: relative;
     width: 45%;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
     margin-bottom: 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     padding: 30px;
@@ -39,7 +40,14 @@
     border-bottom: 1px solid #333;
 }
 
-.LoginForm > form > .Btn {
+.LoginForm > form > .Container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LoginForm > form > .Container > .Btn {
     padding: 10px 20px 10px 20px;
     color: #fff;
     font-weight: 500;

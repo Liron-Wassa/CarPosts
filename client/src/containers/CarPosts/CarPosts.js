@@ -38,18 +38,15 @@ const CarPosts = () => {
 
     useEffect(() => {
         let isCanceled = false;
-        setIsLoading(true);
         axios.get('/cars', {
         }).then(response => {
             if(!isCanceled){
                 if(!response.data.length) setIsNotFound(true);
                 setCars(response.data);
-                setIsLoading(false);
             };
         }).catch(error => {
             if(!isCanceled){
                 setError(error.response.data.message);
-                setIsLoading(false);
             };
         });
         return () => {

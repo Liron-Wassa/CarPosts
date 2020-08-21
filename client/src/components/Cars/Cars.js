@@ -1,4 +1,4 @@
-import Spinner from '../UI/Spinner/Spinner'
+import Spinner from '../UI/Spinner/Spinner';
 import classes from './Cars.module.css';
 import Car from './Car/Car';
 import React from 'react';

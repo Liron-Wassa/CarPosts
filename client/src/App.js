@@ -8,9 +8,11 @@ import Landing from './components/Landing/Landing';
 import Login from './containers/Auth/Login/Login';
 import Layout from './hoc/Layout/Layout';
 
+// Todo design facebook button
+
 const App = () => {
 
-  const { isAuthenticated, tryAutoLogin } = useContext(AuthContext);
+  const { isAuthenticated, tryAutoLogin, loadUserData } = useContext(AuthContext);
 
   useEffect(() => {
     tryAutoLogin();
@@ -38,11 +40,15 @@ const App = () => {
     );
   };
 
+  if(loadUserData) {
+    return null;
+  };
+
   return (
     <Layout>
       {routes}
     </Layout>
   );
-}
+};
 
 export default App;

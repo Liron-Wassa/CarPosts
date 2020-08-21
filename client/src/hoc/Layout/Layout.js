@@ -6,7 +6,7 @@ const Layout = (props) => (
         <header>
             <NavBar />
         </header>
-        <main style={{marginTop: '100px'}}>
+        <main style={{marginTop: '60px'}}>
             {props.children}
         </main>
     </React.Fragment>
