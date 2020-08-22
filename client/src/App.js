@@ -8,7 +8,8 @@ import Landing from './components/Landing/Landing';
 import Login from './containers/Auth/Login/Login';
 import Layout from './hoc/Layout/Layout';
 
-// Todo design facebook button
+// Todo handle internet connection axios
+// React navigation for facebook connection
 
 const App = () => {
 

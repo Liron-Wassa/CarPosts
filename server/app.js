@@ -20,7 +20,7 @@ const userRoute = require('./routes/user');
 app.use(express.json());
 dotenv.config();
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://car-posts.herokuapp.com',
   credentials: true
 }));
 app.use(expressSession({
