@@ -22,10 +22,8 @@ const App = () => {
 
   let routes = (
     <Switch>
-      <Route exact path='/' component={Landing} />
-      <Route path='/register' component={Register} />
-      <Route path='/login' component={Login} />
-      <Redirect to="/" />
+      <Route path='/posts' component={CarPosts} />
+      <Redirect to="/posts" />
     </Switch>
   );
 
