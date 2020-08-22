@@ -1,5 +1,6 @@
 const passportConfig = require('./config/passport');
 const expressSession = require('express-session');
+const MongoStore = require('connect-mongo')(expressSession);
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
@@ -26,7 +27,8 @@ app.use(cors({
 app.use(expressSession({
   secret: process.env.SECRET,
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 app.use(cookieParser(process.env.SECRET));
 app.use(passport.initialize());
