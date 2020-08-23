@@ -8,9 +8,10 @@ const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
 const app = express();
+dotenv.config();
 
 //Connect to DB
-mongoose.connect('mongodb+srv://Liron:Wassa@carposts.mv7ns.mongodb.net/carposts?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Requring routes
 const carsRoute = require('./routes/cars');
@@ -18,7 +19,6 @@ const userRoute = require('./routes/user');
 
 //Config
 app.use(express.json());
-dotenv.config();
 app.use(cors({
   origin: 'http://car-posts.herokuapp.com',
   credentials: true
