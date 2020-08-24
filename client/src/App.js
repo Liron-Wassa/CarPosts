@@ -8,9 +8,6 @@ import Landing from './components/Landing/Landing';
 import Login from './containers/Auth/Login/Login';
 import Layout from './hoc/Layout/Layout';
 
-// Todo handle internet connection axios
-// Todo React navigation for facebook connection
-
 const App = () => {
 
   const { isAuthenticated, tryAutoLogin, loadUserData } = useContext(AuthContext);
