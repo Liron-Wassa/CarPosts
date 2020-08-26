@@ -21,7 +21,7 @@ const passwordRoute = require('./routes/password');
 //Config
 app.use(express.json());
 app.use(cors({
-  origin: 'http://car-posts.herokuapp.com',
+  origin: 'https://car-posts.herokuapp.com',
   credentials: true
 }));
 app.use(expressSession({
