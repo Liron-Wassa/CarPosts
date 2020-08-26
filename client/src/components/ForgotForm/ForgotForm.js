@@ -1,10 +1,9 @@
-import Spinner from '../../UI/Spinner/Spinner';
-import classes from './LoginForm.module.css';
-import { NavLink } from 'react-router-dom';
-import Input from '../../UI/Input/Input';
+import classes from './ForgotForm.module.css';
+import Spinner from '../UI/Spinner/Spinner';
+import Input from '../UI/Input/Input';
 import React from 'react';
 
-const LoginForm = (props) => {
+const ForgotForm = (props) => {
 
     let attachedClasses = [classes.Btn, classes.Allowed];
 
@@ -13,13 +12,14 @@ const LoginForm = (props) => {
     };
 
     return (
-        <div className={classes.LoginForm}>
-            <h1>Sign In</h1>
-            <form onSubmit={(event) => props.login(event, props.form)}>
+        <div className={classes.ForgotForm}>
+            <h1>Reset Your Password</h1>
+            <em>Enter your email address & we'll send you a link to reset your password.</em>
+            <form onSubmit={(event) => props.sendPasswordResetEmail(event, props.form)}>
                 <div className={classes.Inputs}>
                     <div className={classes.InputBox}>
                         <Input
-                            type='text'
+                            type='email'
                             name='email'
                             changeInput={props.change}
                             value={props.form.email.value}
@@ -30,32 +30,19 @@ const LoginForm = (props) => {
                         />
                         <span>Email</span>
                     </div>
-                    <div className={classes.InputBox}>
-                        <Input
-                            type='password'
-                            name='password'
-                            changeInput={props.change}
-                            value={props.form.password.value}
-                            message='Must be 6 or more character [a-z,A-Z,0-9]'
-                            isTouched={props.form.password.touched}
-                            isValid={props.form.password.valid}
-                            required={true}
-                        />
-                        <span>Password</span>
-                    </div>
                 </div>
                 <div className={classes.Container}>
                     <button
                         className={attachedClasses.join(' ')}
                         disabled={!props.formIsValid}
-                    >Login</button>
-                    <NavLink to='/forgot'>Forgot Password?</NavLink>
+                    >Submit</button>
+                    {props.message ? <span>{props.message}</span> : null}
                 </div>
             </form>
             {props.error ? <span>{props.error}</span> : null}
             {props.isLoading ? <Spinner width='5em' height='5em' /> : null}
         </div>
     );
-}
+};
 
-export default LoginForm;
+export default ForgotForm;

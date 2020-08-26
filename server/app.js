@@ -16,11 +16,12 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopo
 //Requring routes
 const carsRoute = require('./routes/cars');
 const userRoute = require('./routes/user');
+const passwordRoute = require('./routes/password');
 
 //Config
 app.use(express.json());
 app.use(cors({
-  origin: 'http://car-posts.herokuapp.com',
+  origin: 'https://car-posts.herokuapp.com',
   credentials: true
 }));
 app.use(expressSession({
@@ -34,8 +35,9 @@ app.use(passport.session());
 passportConfig(passport);
 
 //Routes
-app.use('/', carsRoute);
-app.use('/', userRoute);
+app.use('/cars', carsRoute);
+app.use('/user', userRoute);
+app.use('/password', passwordRoute);
 
 if (process.env.NODE_ENV === "production") {
   const root = path.join(__dirname, "..", 'client', 'build');

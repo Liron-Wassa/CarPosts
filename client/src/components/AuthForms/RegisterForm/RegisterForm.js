@@ -1,6 +1,5 @@
 import classes from './RegisterForm.module.css';
 import Spinner from '../../UI/Spinner/Spinner';
-import { NavLink } from 'react-router-dom';
 import Input from '../../UI/Input/Input';
 import React from 'react';
 
@@ -75,7 +74,7 @@ const RegisterForm = (props) => {
                         className={attachedClasses.join(' ')}
                         disabled={!props.formIsValid}
                     >Register</button>
-                    <NavLink to='/login'>Sign in?</NavLink>
+                    {props.message ? <span>{props.message}</span> : null}
                 </div>
             </form>
             {props.error ? <span>{props.error}</span> : null}

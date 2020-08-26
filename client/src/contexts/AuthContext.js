@@ -5,12 +5,14 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
  
+    const [requestConfirmed, setRequestConfirmed] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loadUserData, setLoadUserData] = useState(false);
     const [registerError, setRegisterError] = useState('');
+    const [confirmedError, setConfirmError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [loginError, setLoginError] = useState('');
-    const [isSignUp, setIsSignUp] = useState(false);
+    const [message, setMessage] = useState('');
     
     const tryAutoLogin = () => {
         const userId = JSON.parse(localStorage.getItem('userId'));
@@ -38,7 +40,7 @@ const AuthContextProvider = (props) => {
     };
 
     const authWithFacebook = (name, email, facebookId) => {
-        axios.post('/auth/facebook', {
+        axios.post('/user/auth/facebook', {
             name: name,
             email: email,
             facebookId: facebookId,
@@ -55,7 +57,7 @@ const AuthContextProvider = (props) => {
         setIsLoading(true);
         event.preventDefault();
         setLoginError('');
-        axios.post('/login', {
+        axios.post('/user/login', {
             email: form.email.value,
             password: form.password.value
         }).then(response => {
@@ -72,7 +74,7 @@ const AuthContextProvider = (props) => {
         setIsLoading(true);
         event.preventDefault();
         setRegisterError('');       
-        axios.post('/register', {
+        axios.post('/user/register', {
             name: form.name.value,
             email: form.email.value,
             password: form.password.value,
@@ -80,7 +82,7 @@ const AuthContextProvider = (props) => {
         }).then(response => {
             if(response.status === 201) {
                 setIsLoading(false);
-                setIsSignUp(true);
+                setMessage(response.data.message);
             };
         }).catch(error => {
             setIsLoading(false);
@@ -88,8 +90,16 @@ const AuthContextProvider = (props) => {
         });
     };
 
+    const confirmAccount = (token) => {
+        axios.post(`/user/confirm/${token}`).then(response => {
+            setRequestConfirmed(true);
+        }).catch(error => {
+            setConfirmError(error.response.data.message);
+        });
+    };
+
     const logout = () => {
-        axios.get('/logout').then(response => {
+        axios.get('/user/logout').then(response => {
             if(response.status === 200) {
                 localStorage.removeItem('userId');
                 setIsAuthenticated(false);
@@ -99,20 +109,25 @@ const AuthContextProvider = (props) => {
 
     return (
         <AuthContext.Provider value={{
+            login,
             logout,
             register,
-            login,
+            setMessage,
             tryAutoLogin,
-            setIsSignUp,
-            authWithFacebook,
-            setRegisterError,
             setLoginError,
-            loadUserData,
-            isLoading,
-            isSignUp,
+            confirmAccount,
+            setConfirmError,
+            setRegisterError,
+            authWithFacebook,
+            setRequestConfirmed,
+            requestConfirmed,
+            isAuthenticated,
+            confirmedError,
             registerError,
+            loadUserData,
             loginError,
-            isAuthenticated
+            isLoading,
+            message
         }}>
             {props.children}
         </AuthContext.Provider>

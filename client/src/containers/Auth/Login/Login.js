@@ -22,7 +22,8 @@ const Login = () => {
                 setLoginError('');
             };
         };
-    }, [loginError, setLoginError]);
+        // eslint-disable-next-line
+    }, []);
 
     const loginForm = {
         email: {

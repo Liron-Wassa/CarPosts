@@ -1,22 +1,28 @@
-.LoginForm {
+.ForgotForm {
     position: relative;
-    width: 45%;
+    width: 60%;
     margin: 100px auto 0 auto;
     margin-bottom: 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     padding: 30px;
 }
 
-.LoginForm .Inputs {
+.ForgotForm > em {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.ForgotForm .Inputs {
     width: 80%;
 }
 
-.LoginForm .Inputs .InputBox {
+.ForgotForm .Inputs .InputBox {
     position: relative;
     margin-bottom: 25px;
 }
 
-.LoginForm .Inputs .InputBox > span {
+.ForgotForm .Inputs .InputBox > span {
     position: absolute;
     top: 10px;
     left: 0;
@@ -25,38 +31,35 @@
     transition: 0.5s;
 }
 
-.LoginForm .Inputs .InputBox input:focus ~ span,
-.LoginForm .Inputs .InputBox input:valid ~ span {
+.ForgotForm .Inputs .InputBox input:focus ~ span,
+.ForgotForm .Inputs .InputBox input:valid ~ span {
     color: salmon;
     font-size: 12px;
     letter-spacing: 1px;
     transform: translateY(-20px);
 }
 
-.LoginForm .Inputs input {
+.ForgotForm .Inputs input {
     background: transparent;
     padding: 10px 10px 5px 0;
     border: none;
     border-bottom: 1px solid #666;
 }
 
-.LoginForm > form > .Container {
+.ForgotForm > form > .Container {
     width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.LoginForm > form > .Container > a {
-    text-decoration: none;
-    color: #666;
+.ForgotForm > form > .Container > span {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
-.LoginForm > form > .Container > a:hover {
-    color: rgb(73, 143, 248);
-} 
-
-.LoginForm > form > .Container > .Btn {
+.ForgotForm > form > .Container > .Btn {
     padding: 10px 20px 10px 20px;
     color: #fff;
     font-weight: 500;
@@ -67,7 +70,7 @@
     font-weight: 600;
 }
 
-.LoginForm > span {
+.ForgotForm > span {
     display: inline-block;
     margin-top: 20px;
     width: 100%;
@@ -91,7 +94,7 @@
 }
 
 @media (max-width: 650px) {
-    .LoginForm {
+    .ForgotForm {
         width: 100%;
         box-shadow: none;
     }

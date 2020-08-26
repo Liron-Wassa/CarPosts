@@ -1,4 +1,4 @@
-.LoginForm {
+.ResetForm {
     position: relative;
     width: 45%;
     margin: 100px auto 0 auto;
@@ -7,16 +7,16 @@
     padding: 30px;
 }
 
-.LoginForm .Inputs {
+.ResetForm .Inputs {
     width: 80%;
 }
 
-.LoginForm .Inputs .InputBox {
+.ResetForm .Inputs .InputBox {
     position: relative;
     margin-bottom: 25px;
 }
 
-.LoginForm .Inputs .InputBox > span {
+.ResetForm .Inputs .InputBox > span {
     position: absolute;
     top: 10px;
     left: 0;
@@ -25,38 +25,22 @@
     transition: 0.5s;
 }
 
-.LoginForm .Inputs .InputBox input:focus ~ span,
-.LoginForm .Inputs .InputBox input:valid ~ span {
+.ResetForm .Inputs .InputBox input:focus ~ span,
+.ResetForm .Inputs .InputBox input:valid ~ span {
     color: salmon;
     font-size: 12px;
     letter-spacing: 1px;
     transform: translateY(-20px);
 }
 
-.LoginForm .Inputs input {
+.ResetForm .Inputs input {
     background: transparent;
     padding: 10px 10px 5px 0;
     border: none;
     border-bottom: 1px solid #666;
 }
 
-.LoginForm > form > .Container {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.LoginForm > form > .Container > a {
-    text-decoration: none;
-    color: #666;
-}
-
-.LoginForm > form > .Container > a:hover {
-    color: rgb(73, 143, 248);
-} 
-
-.LoginForm > form > .Container > .Btn {
+.ResetForm > form > .Btn {
     padding: 10px 20px 10px 20px;
     color: #fff;
     font-weight: 500;
@@ -67,7 +51,7 @@
     font-weight: 600;
 }
 
-.LoginForm > span {
+.ResetForm > span {
     display: inline-block;
     margin-top: 20px;
     width: 100%;
@@ -91,7 +75,7 @@
 }
 
 @media (max-width: 650px) {
-    .LoginForm {
+    .ResetForm {
         width: 100%;
         box-shadow: none;
     }

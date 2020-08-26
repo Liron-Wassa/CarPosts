@@ -11,8 +11,8 @@ const Register = () => {
         register,
         isLoading,
         authWithFacebook,
-        isSignUp,
-        setIsSignUp,
+        message,
+        setMessage,
         registerError,
         setRegisterError,
         isAuthenticated
@@ -20,12 +20,15 @@ const Register = () => {
 
     useEffect(() => {
         return () => {
-            setIsSignUp(false);
+            if(message) {
+                setMessage('');
+            };
             if(registerError) {
                 setRegisterError('');
             };
         };
-    }, [setIsSignUp, registerError, setRegisterError]);
+        // eslint-disable-next-line
+    }, []);
 
     const registerform = {
         name: {
@@ -92,10 +95,6 @@ const Register = () => {
         authWithFacebook(name, email, facebookId, token);
     };
 
-    if(isSignUp) {
-        return <Redirect to='/login' />;
-    };
-
     if(isAuthenticated) {
         return <Redirect to='/posts' />;
     };
@@ -109,6 +108,7 @@ const Register = () => {
                 change={changeInputHandler}
                 error={registerError}
                 formIsValid={formIsValid}
+                message={message}
             />
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <FacebookLoginWithButton
