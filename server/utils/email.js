@@ -30,6 +30,7 @@ const sendResetPasswordEmail = (req, res, email, token) => {
         service: 'gmail',
         host: 'https://car-posts.herokuapp.com',
         port: 465,
+        secure: false,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
@@ -60,6 +61,7 @@ const sendConfirmAccountEmail = (req, res, email, token) => {
         service: 'gmail',
         host: 'https://car-posts.herokuapp.com',
         port: 465,
+        secure: false,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
