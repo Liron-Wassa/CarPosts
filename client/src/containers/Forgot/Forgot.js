@@ -38,7 +38,7 @@ const Forgot = () => {
         event.preventDefault();
         setIsLoading(true);
         axios.post('/password/forgot', {
-            email: form.email.value
+            email: form.email.value.toLowerCase()
         }).then(response => {
             if(response.status === 201) {
                 setMessage(response.data.message);

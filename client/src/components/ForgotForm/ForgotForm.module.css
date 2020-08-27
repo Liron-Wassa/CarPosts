@@ -5,6 +5,7 @@
     margin-bottom: 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     padding: 30px;
+    box-sizing: border-box;
 }
 
 .ForgotForm > em {

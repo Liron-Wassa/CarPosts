@@ -97,6 +97,8 @@ const Login = () => {
                     redirectUri={true}
                     icon="fa-facebook"
                     textButton='sign in with facebook'
+                    disableMobileRedirect={true}
+                    isMobile={false}
                 />
             </div>
         </React.Fragment>

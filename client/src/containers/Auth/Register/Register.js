@@ -118,6 +118,8 @@ const Register = () => {
                     redirectUri={true}
                     icon="fa-facebook"
                     textButton='continue with facebook'
+                    disableMobileRedirect={true}
+                    isMobile={false}
                 />
             </div>
         </React.Fragment>

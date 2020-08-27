@@ -58,7 +58,7 @@ const AuthContextProvider = (props) => {
         event.preventDefault();
         setLoginError('');
         axios.post('/user/login', {
-            email: form.email.value,
+            email: form.email.value.toLowerCase(),
             password: form.password.value
         }).then(response => {
             localStorage.setItem('userId', JSON.stringify(response.data.userId));
@@ -76,7 +76,7 @@ const AuthContextProvider = (props) => {
         setRegisterError('');       
         axios.post('/user/register', {
             name: form.name.value,
-            email: form.email.value,
+            email: form.email.value.toLowerCase(),
             password: form.password.value,
             confirm: form.confirm.value
         }).then(response => {
