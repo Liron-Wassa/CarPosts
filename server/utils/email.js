@@ -29,8 +29,8 @@ const sendResetPasswordEmail = (req, res, email, token) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         host: 'https://car-posts.herokuapp.com',
-        port: 465,
-        secure: true,
+        secureConnection: false,
+        port: 587,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
@@ -63,8 +63,8 @@ const sendConfirmAccountEmail = (req, res, email, token) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         host: 'https://car-posts.herokuapp.com',
-        port: 465,
-        secure: true,
+        secureConnection: false,
+        port: 587,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
