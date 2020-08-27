@@ -28,15 +28,9 @@ const checkConfirmTimeout = (req, res, email, time) => {
 const sendResetPasswordEmail = (req, res, email, token) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
-        host: 'https://car-posts.herokuapp.com',
-        secureConnection: false,
-        port: 587,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
-        },
-        tls: {
-          rejectUnauthorized: false
         }
     });
     const mailOption = {
@@ -62,15 +56,9 @@ const sendResetPasswordEmail = (req, res, email, token) => {
 const sendConfirmAccountEmail = (req, res, email, token) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
-        host: 'https://car-posts.herokuapp.com',
-        secureConnection: false,
-        port: 587,
         auth: {
             user: process.env.MY_EMAIL,
             pass: process.env.MY_PASSWORD
-        },
-        tls: {
-          rejectUnauthorized: false
         }
     });
     const mailOption = {
