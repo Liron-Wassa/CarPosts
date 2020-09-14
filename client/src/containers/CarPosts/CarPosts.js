@@ -39,6 +39,7 @@ const CarPosts = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
+        setError('');
         axios.get('/cars', {
             cancelToken: sourse.token
         }).then(response => {
@@ -46,7 +47,7 @@ const CarPosts = () => {
             setCars(response.data);
         }).catch(error => {
             if(axios.isCancel(error)) return;
-            if (!error.response) setError('Network Error');
+            if (!error.response) setError(error.message);
             else setError(error.response.data.message);
         });
         return () => {
@@ -81,6 +82,7 @@ const CarPosts = () => {
     const searchCars = (event) => {
         event.preventDefault();
         const query = getQuery();
+        setError('');
         setIsNotFound(false);
         setIsLoading(true);
         axios.get('/cars', {
@@ -92,7 +94,7 @@ const CarPosts = () => {
             setIsLoading(false);
         }).catch(error => {
             if(axios.isCancel(error)) return;
-            if (!error.response) setError('Network Error');
+            if (!error.response) setError(error.message);
             else setError(error.response.data.message);
             setIsLoading(false);
         });

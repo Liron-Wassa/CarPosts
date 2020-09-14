@@ -36,6 +36,7 @@ const Forgot = () => {
             
     const sendPasswordResetEmail = (event, form) => {
         event.preventDefault();
+        setError('');
         setIsLoading(true);
         axios.post('/password/forgot', {
             email: form.email.value.toLowerCase()
@@ -45,7 +46,7 @@ const Forgot = () => {
                 setIsLoading(false);
             };
         }).catch(error => {
-            if (!error.response) setError('Network Error');
+            if (!error.response) setError(error.message);
             else setError(error.response.data.message);
             setMessage('');
             setIsLoading(false);

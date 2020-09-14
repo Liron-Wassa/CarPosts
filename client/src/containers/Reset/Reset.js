@@ -32,6 +32,7 @@ const Reset = (props) => {
 
     const resetPassword = (event, form) => {
         event.preventDefault();
+        setError('');
         setIsLoading(true);
         axios.patch(`/password/reset/${props.match.params.token}`, {
             password: form.password.value,
@@ -42,7 +43,7 @@ const Reset = (props) => {
                 setIsLoading(false);
             };
         }).catch(error => {
-            if (!error.response) setError('Network Error');
+            if (!error.response) setError(error.message);
             else setError(error.response.data.message);
             setIsLoading(false);
         });

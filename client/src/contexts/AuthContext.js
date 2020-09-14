@@ -41,6 +41,7 @@ const AuthContextProvider = (props) => {
     };
 
     const authWithFacebook = (name, email, facebookId) => {
+        setLoginError('');
         axios.post('/user/auth/facebook', {
             name: name,
             email: email,
@@ -50,7 +51,7 @@ const AuthContextProvider = (props) => {
             localStorage.setItem('userId', JSON.stringify(response.data.userId));
             setIsAuthenticated(true);
         }).catch(error => {
-            if (!error.response) setLoginError('Network Error');
+            if (!error.response) setLoginError(error.message);
             else setLoginError(error.response.data.message);
         });
     };
@@ -67,7 +68,7 @@ const AuthContextProvider = (props) => {
             setIsLoading(false);
             setIsAuthenticated(true);
         }).catch(error => {
-            if (!error.response) setLoginError('Network Error');
+            if (!error.response) setLoginError(error.message);
             else setLoginError(error.response.data.message);
             setIsLoading(false);
         });
@@ -88,31 +89,31 @@ const AuthContextProvider = (props) => {
                 setMessage(response.data.message);
             };
         }).catch(error => {
-            if (!error.response) setRegisterError('Network Error');
+            if (!error.response) setRegisterError(error.message);
             else setRegisterError(error.response.data.message);
             setIsLoading(false);
         });
     };
 
     const confirmAccount = (token) => {
+        setConfirmError('');
         axios.post(`/user/confirm/${token}`).then(response => {
             setRequestConfirmed(true);
         }).catch(error => {
-            if (!error.response) setConfirmError('Network Error');
+            if (!error.response) setConfirmError(error.message);
             else setConfirmError(error.response.data.message);
         });
     };
 
     const logout = () => {
+        setLoginError('');
         axios.get('/user/logout').then(response => {
             if(response.status === 200) {
                 localStorage.removeItem('userId');
                 setIsAuthenticated(false);
             };
         }).catch(error => {
-            console.log(error);
-            console.log(error.message);
-            console.log(error.response);
+            setLoginError(error.message);
         });
     };
 
@@ -124,6 +125,7 @@ const AuthContextProvider = (props) => {
             setMessage,
             tryAutoLogin,
             setLoginError,
+            setLogoutError,
             confirmAccount,
             setConfirmError,
             setRegisterError,
@@ -134,6 +136,7 @@ const AuthContextProvider = (props) => {
             confirmedError,
             registerError,
             loadUserData,
+            logoutError,
             loginError,
             isLoading,
             message
