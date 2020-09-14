@@ -4,10 +4,7 @@ import React from 'react';
 
 const SearchBarVehicles = (props) => {
 
-  let buttonStyle = classes.Allowed;
-  // if(props.formIsValid) {
-  //   buttonStyle = classes.Allowed;
-  // };
+  const buttonStyle = classes.Allowed;
 
   return (
     <form className={classes.SearchBarVehicles} onSubmit={(event) => props.searchCars(event)}>

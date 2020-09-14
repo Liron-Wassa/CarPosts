@@ -4,6 +4,8 @@ import Modal from '../../components/UI/Modal/Modal';
 import Cars from '../../components/Cars/Cars';
 import axios from 'axios';
 
+const sourse = axios.CancelToken.source();
+
 const CarPosts = () => {
 
     const carForm = {
@@ -37,20 +39,17 @@ const CarPosts = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        let isCanceled = false;
         axios.get('/cars', {
+            cancelToken: sourse.token
         }).then(response => {
-            if(!isCanceled){
-                if(!response.data.length) setIsNotFound(true);
-                setCars(response.data);
-            };
+            if(!response.data.length) setIsNotFound(true);
+            setCars(response.data);
         }).catch(error => {
-            if(!isCanceled){
-                setError(error.response.data.message);
-            };
+            if(axios.isCancel(error)) return;
+            setError(error.response.data.message);
         });
         return () => {
-            isCanceled = true;
+            sourse.cancel();
         };
     }, []);
 
@@ -83,13 +82,15 @@ const CarPosts = () => {
         const query = getQuery();
         setIsNotFound(false);
         setIsLoading(true);
-        axios.get('/cars', {
-            params: query
+        axios.get('/ars', {
+            params: query,
+            cancelToken: sourse.token
         }).then(response => {
             if(!response.data.length) setIsNotFound(true);
             setCars(response.data);
             setIsLoading(false);
         }).catch(error => {
+            if(axios.isCancel(error)) return;
             setError(error.response.data.message);
             setIsLoading(false);
         });

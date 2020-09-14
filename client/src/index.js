@@ -3,8 +3,24 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import axios from 'axios';
 import App from './App';
 import './index.css';
+
+axios.interceptors.request.use(config => {
+  console.log(config);
+  return config;
+}, error => {
+  console.log(error);
+  console.log(error.messgae);
+  return Promise.reject(error);
+});
+
+axios.interceptors.response.use(response => {
+  return response;
+}, error => {
+  return Promise.reject(error);
+});
 
 ReactDOM.render(
   <React.StrictMode>

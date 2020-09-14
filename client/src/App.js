@@ -11,6 +11,9 @@ import Forgot from './containers/Forgot/Forgot';
 import Reset from './containers/Reset/Reset';
 import Layout from './hoc/Layout/Layout';
 
+// Todo handle internet connection axios
+// Todo React navigation for facebook connection
+
 const App = () => {
 
   const { isAuthenticated, tryAutoLogin, loadUserData } = useContext(AuthContext);
