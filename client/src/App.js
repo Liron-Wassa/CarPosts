@@ -8,12 +8,19 @@ import { AuthContext } from './contexts/AuthContext';
 import Landing from './components/Landing/Landing';
 import Login from './containers/Auth/Login/Login';
 import Forgot from './containers/Forgot/Forgot';
+import Modal from './components/UI/Modal/Modal';
 import Reset from './containers/Reset/Reset';
 import Layout from './hoc/Layout/Layout';
 
 const App = () => {
 
-  const { isAuthenticated, tryAutoLogin, loadUserData } = useContext(AuthContext);
+  const {
+    isAuthenticated,
+    tryAutoLogin,
+    loadUserData,
+    logoutError,
+    setLogoutError
+  } = useContext(AuthContext);
 
   useEffect(() => {
     tryAutoLogin();
@@ -46,6 +53,15 @@ const App = () => {
 
   if(loadUserData) {
     return null;
+  };
+
+  if(logoutError) {
+    return (
+      <Modal
+        error={logoutError}
+        clicked={() => setLogoutError('')}
+      />
+    );
   };
 
   return (
