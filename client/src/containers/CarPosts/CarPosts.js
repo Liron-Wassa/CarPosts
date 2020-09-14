@@ -91,7 +91,10 @@ const CarPosts = () => {
             setIsLoading(false);
         }).catch(error => {
             if(axios.isCancel(error)) return;
-            setError(error.response.data.message);
+            console.log(error);
+            console.log(error.messgae);
+            console.log(error.response);
+            // setError(error.response.data.message);
             setIsLoading(false);
         });
     };
