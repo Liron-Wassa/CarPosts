@@ -106,14 +106,14 @@ const AuthContextProvider = (props) => {
     };
 
     const logout = () => {
-        setLoginError('');
+        setLogoutError('');
         axios.get('/user/logout').then(response => {
             if(response.status === 200) {
                 localStorage.removeItem('userId');
                 setIsAuthenticated(false);
             };
         }).catch(error => {
-            setLoginError(error.message);
+            setLogoutError(error.message);
         });
     };
 
