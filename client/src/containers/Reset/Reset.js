@@ -42,7 +42,8 @@ const Reset = (props) => {
                 setIsLoading(false);
             };
         }).catch(error => {
-            setError(error.response.data.message);
+            if (!error.response) setError('Network Error');
+            else setError(error.response.data.message);
             setIsLoading(false);
         });
     };

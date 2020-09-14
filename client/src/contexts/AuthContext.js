@@ -10,6 +10,7 @@ const AuthContextProvider = (props) => {
     const [loadUserData, setLoadUserData] = useState(false);
     const [registerError, setRegisterError] = useState('');
     const [confirmedError, setConfirmError] = useState('');
+    const [logoutError, setLogoutError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [loginError, setLoginError] = useState('');
     const [message, setMessage] = useState('');
@@ -49,7 +50,8 @@ const AuthContextProvider = (props) => {
             localStorage.setItem('userId', JSON.stringify(response.data.userId));
             setIsAuthenticated(true);
         }).catch(error => {
-            setLoginError(error.response.data.message);
+            if (!error.response) setLoginError('Network Error');
+            else setLoginError(error.response.data.message);
         });
     };
 
@@ -65,8 +67,9 @@ const AuthContextProvider = (props) => {
             setIsLoading(false);
             setIsAuthenticated(true);
         }).catch(error => {
+            if (!error.response) setLoginError('Network Error');
+            else setLoginError(error.response.data.message);
             setIsLoading(false);
-            setLoginError(error.response.data.message);
         });
     };
 
@@ -85,8 +88,9 @@ const AuthContextProvider = (props) => {
                 setMessage(response.data.message);
             };
         }).catch(error => {
+            if (!error.response) setRegisterError('Network Error');
+            else setRegisterError(error.response.data.message);
             setIsLoading(false);
-            setRegisterError(error.response.data.message);
         });
     };
 
@@ -94,7 +98,8 @@ const AuthContextProvider = (props) => {
         axios.post(`/user/confirm/${token}`).then(response => {
             setRequestConfirmed(true);
         }).catch(error => {
-            setConfirmError(error.response.data.message);
+            if (!error.response) setConfirmError('Network Error');
+            else setConfirmError(error.response.data.message);
         });
     };
 
@@ -104,6 +109,10 @@ const AuthContextProvider = (props) => {
                 localStorage.removeItem('userId');
                 setIsAuthenticated(false);
             };
+        }).catch(error => {
+            console.log(error);
+            console.log(error.message);
+            console.log(error.response);
         });
     };
 

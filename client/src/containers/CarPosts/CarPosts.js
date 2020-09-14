@@ -46,7 +46,8 @@ const CarPosts = () => {
             setCars(response.data);
         }).catch(error => {
             if(axios.isCancel(error)) return;
-            setError(error.response.data.message);
+            if (!error.response) setError('Network Error');
+            else setError(error.response.data.message);
         });
         return () => {
             sourse.cancel();
@@ -91,10 +92,8 @@ const CarPosts = () => {
             setIsLoading(false);
         }).catch(error => {
             if(axios.isCancel(error)) return;
-            console.log(error);
-            console.log(error.messgae);
-            console.log(error.response);
-            // setError(error.response.data.message);
+            if (!error.response) setError('Network Error');
+            else setError(error.response.data.message);
             setIsLoading(false);
         });
     };
