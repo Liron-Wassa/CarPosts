@@ -82,7 +82,7 @@ const CarPosts = () => {
         const query = getQuery();
         setIsNotFound(false);
         setIsLoading(true);
-        axios.get('/ars', {
+        axios.get('/cars', {
             params: query,
             cancelToken: sourse.token
         }).then(response => {
